@@ -1,0 +1,35 @@
+buildscript {
+    ext {
+        SerenityCoreVersion = "3.6.7"
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:${SerenityCoreVersion}")
+        classpath "net.serenity-bdd:serenity-single-page-report:2.1.5"
+
+    }
+}
+plugins {
+    id 'java'
+}
+
+group 'org.accenture.automation'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    SerenityCoreVersion = "3.6.7"
+}
+
+dependencies {
+    implementation 'io.appium:java-client:8.3.0'
+    testImplementation "junit:junit:4.12"
+    implementation "net.serenity-bdd:serenity-core:${SerenityCoreVersion}"
+    implementation "net.serenity-bdd:serenity-cucumber:${SerenityCoreVersion}"
+    implementation "net.serenity-bdd:serenity-screenplay:${SerenityCoreVersion}"
+    implementation "net.serenity-bdd:serenity-screenplay-webdriver:${SerenityCoreVersion}"
+    implementation "org.seleniumhq.selenium:selenium-server:3.14.0"
+    testImplementation('org.slf4j:slf4j-simple:2.0.6')
+}
